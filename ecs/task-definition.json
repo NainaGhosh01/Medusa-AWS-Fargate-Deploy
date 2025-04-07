@@ -1,0 +1,22 @@
+{
+  "family": "medusa-task",
+  "networkMode": "awsvpc",
+  "containerDefinitions": [
+    {
+      "name": "medusa-container",
+      "image": "PLACEHOLDER_IMAGE",  // will be replaced by GitHub Actions
+      "portMappings": [
+        {
+          "containerPort": 9000,
+          "hostPort": 9000,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true
+    }
+  ],
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "512",
+  "memory": "1024",
+  "executionRoleArn": "arn:aws:iam::724772070195:role/ecsTaskExecutionRole"
+}
